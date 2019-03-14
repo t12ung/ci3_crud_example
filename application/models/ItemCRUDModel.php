@@ -1,6 +1,12 @@
 <?php
 class ItemCRUDModel extends CI_Model{
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->database();
+    }
+
     public function get_itemCRUD(){
         if(!empty($this->input->get("search"))){
             $this->db->like('title', $this->input->get("search"));
